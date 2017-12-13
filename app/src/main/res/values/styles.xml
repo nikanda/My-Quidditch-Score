@@ -1,0 +1,28 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Primary theme color of the app (sets background color of app bar) -->
+        <item name="colorPrimary">#acacac</item>
+        <!-- Background color of buttons in the app -->
+        <item name="colorButtonNormal">#898989</item>
+        <item name="android:textColorPrimary">#fff</item>
+    </style>
+
+    <style name="yellowCardBtn" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">#b4b06d</item>
+        <item name="android:textColorPrimary">#fff</item>
+    </style>
+
+    <style name="blueCardBtn" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">#657793</item>
+        <item name="android:textColorPrimary">#fff</item>
+    </style>
+
+    <style name="redCardBtn" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">#9c7272</item>
+        <item name="android:textColorPrimary">#fff</item>
+    </style>
+
+
+
+</resources>

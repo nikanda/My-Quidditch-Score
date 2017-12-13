@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.myquidditchscore.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#707070"
+        android:orientation="horizontal"
+        tools:context="com.example.android.myquidditchscore.MainActivity">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/play"
+            android:onClick="startChronometer" />
+
+        <Chronometer
+            android:id="@+id/chronometerGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="36dp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/pause"
+            android:gravity="center"
+            android:onClick="stopChronometer" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#acacac"
+        android:orientation="horizontal"
+        tools:context="com.example.android.quidditchscore.MainActivity">
+
+        <LinearLayout
+            android:id="@+id/TeamA"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_horizontal"
+                android:text="Team A"
+                android:textColor="#616161"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="24dp"
+                    android:layout_height="48dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/minus"
+                    android:onClick="decrementA"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:id="@+id/team_a_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="45sp" />
+
+                <Button
+                    android:layout_width="24dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/plus"
+                    android:onClick="incrementA"
+                    android:textSize="20dp" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:onClick="addThirtyForTeamA"
+                android:text="+30 points" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dip"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/white" />
+
+        <LinearLayout
+            android:id="@+id/TeamB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_horizontal"
+                android:text="Team B"
+                android:textColor="#616161"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="24dp"
+                    android:layout_height="48dp"
+                    android:layout_marginRight="8dp"
+                    android:onClick="decrementB"
+                    android:textSize="20dp"
+                    android:background="@drawable/minus"/>
+
+                <TextView
+                    android:id="@+id/team_b_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="0"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="45sp" />
+
+                <Button
+                    android:layout_width="24dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="8dp"
+                    android:onClick="incrementB"
+                    android:background="@drawable/plus"
+                    android:textSize="20dp"/>
+
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:onClick="addThirtyForTeamB"
+                android:text="+30 points" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#707070"
+        android:orientation="horizontal"
+        tools:context="com.example.android.quidditchscore.MainActivity">
+
+        <Button
+            android:id="@+id/yellowCardBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:text="yellow\ncard"
+            android:textAlignment="center"
+            android:theme="@style/yellowCardBtn" />
+
+        <Button
+            android:id="@+id/blueCardBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:text="blue\ncard"
+            android:textAlignment="center"
+            android:theme="@style/blueCardBtn" />
+
+        <Button
+            android:id="@+id/redCardBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:text="red\ncard"
+            android:textAlignment="center"
+            android:theme="@style/redCardBtn" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:layout_weight="1"
+        android:background="#fff"
+        android:orientation="horizontal"
+        tools:context="com.example.android.quidditchscore.MainActivity">
+
+        <ListView
+            android:id="@+id/simpleListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#acacac"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/resets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="resets"
+        android:text="resets game"
+        android:textSize="20sp"
+        android:background="#7d7d7d"
+        />
+
+</LinearLayout>
