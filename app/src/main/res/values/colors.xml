@@ -3,4 +3,23 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <item name="white" type="color">#fff</item>
+    <item name="darkGrey" type="color">#707070</item>
+    <item name="lightGrey" type="color">#acacac</item>
+    <item name="yellow" type="color">#b4b06d</item>
+    <item name="blue" type="color">#657793</item>
+    <item name="red" type="color">#9c7272</item>
+    <item name="almostWhite" type="color">#e5e2e2</item>
+
+
+    <integer-array name="androidcolors">
+        <item>@color/white</item>
+        <item>@color/darkGrey</item>
+        <item>@color/lightGrey</item>
+        <item>@color/yellow</item>
+        <item>@color/blue</item>
+        <item>@color/red</item>
+        <item>@color/almostWhite</item>
+
+    </integer-array>
 </resources>

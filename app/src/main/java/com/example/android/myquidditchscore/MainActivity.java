@@ -1,5 +1,6 @@
 package com.example.android.myquidditchscore;
 
+import android.graphics.drawable.BitmapDrawable;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,13 +10,19 @@ import android.widget.Chronometer;
 import android.content.Context;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
+
+import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.List;
+
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+
+import static junit.framework.Assert.assertTrue;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -35,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     int clickCounter = 0;
 
     //Popup
-    Button yellowCardBtn, blueCardBtn, redCardBtn, popupBtnTeamA, popupBtnTeamB;
+    Button yellowCardBtn, blueCardBtn, redCardBtn, popupBtnTeamA, popupBtnTeamB, resets;
     PopupWindow popupWindow;
     LinearLayout linearLayout1;
 
@@ -46,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamA(0);
         displayForTeamB(0);
 
+
         simpleList = (ListView) findViewById(R.id.simpleListView);
 
         myAdapter = new MyAdapter(this, R.layout.list_view_items, teamList);
@@ -53,12 +61,14 @@ public class MainActivity extends AppCompatActivity {
 
         myAdapter = new MyAdapter(this, R.layout.list_view_items, teamList);
         simpleList.setAdapter(myAdapter);
+        resets = (Button) findViewById(R.id.resets);
 
         //popup
         yellowCardBtn = (Button) findViewById(R.id.yellowCardBtn);
         blueCardBtn = (Button) findViewById(R.id.blueCardBtn);
         redCardBtn = (Button) findViewById(R.id.redCardBtn);
         linearLayout1 = (LinearLayout) findViewById(R.id.linearLayout1);
+
 
         yellowCardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
 
                 //instantiate popup window
                 popupWindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+
+                //Disable outside PopupWindow
+                popupWindow.setFocusable(true);
+                popupWindow.update();
 
                 //display the popup window
                 popupWindow.showAtLocation(linearLayout1, Gravity.CENTER, 0, 0);
@@ -118,6 +132,10 @@ public class MainActivity extends AppCompatActivity {
                 //instantiate popup window
                 popupWindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 
+                //Disable outside PopupWindow
+                popupWindow.setFocusable(true);
+                popupWindow.update();
+
                 //display the popup window
                 popupWindow.showAtLocation(linearLayout1, Gravity.CENTER, 0, 0);
 
@@ -162,6 +180,10 @@ public class MainActivity extends AppCompatActivity {
                 //instantiate popup window
                 popupWindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 
+                //Disable outside PopupWindow
+                popupWindow.setFocusable(true);
+                popupWindow.update();
+
                 //display the popup window
                 popupWindow.showAtLocation(linearLayout1, Gravity.CENTER, 0, 0);
 
@@ -190,6 +212,23 @@ public class MainActivity extends AppCompatActivity {
                 });
 
             }
+        });
+
+        //reset ListView
+        resets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                scoreTeamB = 0;
+                scoreTeamA = 0;
+
+                displayForTeamA(scoreTeamA);
+                displayForTeamB(scoreTeamB);
+                ((Chronometer) findViewById(R.id.chronometerGame)).setBase(SystemClock.elapsedRealtime());
+                ((Chronometer) findViewById(R.id.chronometerGame)).stop();
+                teamList.clear();
+                myAdapter.notifyDataSetChanged();
+            }
+
         });
 
     }
@@ -244,21 +283,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    // Displays the given score for Team B.
+    // Displays given score for Team B.
     public void displayForTeamB(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_b_score);
         scoreView.setText(String.valueOf(score));
-    }
-
-    // Displays given resets points for TeamA and TeamB
-    public void resets(View v) {
-        scoreTeamB = 0;
-        scoreTeamA = 0;
-
-        displayForTeamA(scoreTeamA);
-        displayForTeamB(scoreTeamB);
-        ((Chronometer) findViewById(R.id.chronometerGame)).setBase(SystemClock.elapsedRealtime());
-        ((Chronometer) findViewById(R.id.chronometerGame)).stop();
     }
 
 

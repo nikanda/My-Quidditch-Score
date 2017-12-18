@@ -5,24 +5,69 @@
         <item name="colorPrimary">#acacac</item>
         <!-- Background color of buttons in the app -->
         <item name="colorButtonNormal">#898989</item>
-        <item name="android:textColorPrimary">#fff</item>
+        <item name="android:textColorPrimary">@color/darkGrey</item>
     </style>
 
     <style name="yellowCardBtn" parent="Widget.AppCompat.Button.Colored">
-        <item name="colorButtonNormal">#b4b06d</item>
-        <item name="android:textColorPrimary">#fff</item>
+        <item name="colorButtonNormal">@color/yellow</item>
+        <item name="android:textColorPrimary">@color/white</item>
     </style>
 
     <style name="blueCardBtn" parent="Widget.AppCompat.Button.Colored">
-        <item name="colorButtonNormal">#657793</item>
-        <item name="android:textColorPrimary">#fff</item>
+        <item name="colorButtonNormal">@color/blue</item>
+        <item name="android:textColorPrimary">@color/white</item>
     </style>
 
     <style name="redCardBtn" parent="Widget.AppCompat.Button.Colored">
-        <item name="colorButtonNormal">#9c7272</item>
-        <item name="android:textColorPrimary">#fff</item>
+        <item name="colorButtonNormal">@color/red</item>
+        <item name="android:textColorPrimary">@color/white</item>
     </style>
 
+    <style name="resets" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:textSize">24sp</item>
+        <item name="colorButtonNormal">@color/darkGrey</item>
+        <item name="android:textColorPrimary">@color/almostWhite</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
 
+    </style>
+
+    <style name="chronometerGame">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textIsSelectable">false</item>
+
+    </style>
+
+    <style name="team_score">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textIsSelectable">false</item>
+    </style>
+
+    <style name="text_items">
+        <item name="android:textColor">@color/almostWhite</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textIsSelectable">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="text_normal">
+        <item name="android:textColor">@color/darkGrey</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textIsSelectable">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="text_popup_button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textIsSelectable">false</item>
+    </style>
 
 </resources>

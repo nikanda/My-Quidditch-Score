@@ -11,33 +11,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#707070"
+        android:background="@color/darkGrey"
+        android:elevation="2dp"
+        android:gravity="center_vertical|center_horizontal"
         android:orientation="horizontal"
+        android:paddingEnd="24dp"
+        android:paddingStart="24dp"
         tools:context="com.example.android.myquidditchscore.MainActivity">
 
         <Button
             android:id="@+id/button1"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_margin="8dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:background="@drawable/play"
             android:onClick="startChronometer" />
 
         <Chronometer
             android:id="@+id/chronometerGame"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:background="@color/lightGrey"
             android:gravity="center"
-            android:textColor="#fff"
-            android:textSize="36dp" />
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textAppearance="@style/chronometerGame" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_margin="8dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:background="@drawable/pause"
             android:gravity="center"
             android:onClick="stopChronometer" />
@@ -45,9 +49,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/TeamScore"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#acacac"
+        android:background="@color/lightGrey"
         android:orientation="horizontal"
         tools:context="com.example.android.quidditchscore.MainActivity">
 
@@ -66,15 +71,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-medium"
                 android:gravity="center_horizontal"
-                android:text="Team A"
-                android:textColor="#616161"
-                android:textSize="20sp" />
+                android:text="Team Name"
+                android:textAppearance="@style/text_items" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <Button
@@ -83,18 +87,18 @@
                     android:layout_marginRight="8dp"
                     android:background="@drawable/minus"
                     android:onClick="decrementA"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/team_a_score"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="start"
                     android:layout_marginBottom="8dp"
                     android:layout_weight="1"
-                    android:text="0"
                     android:gravity="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="45sp" />
+                    android:text="0"
+                    android:textAppearance="@style/team_score" />
 
                 <Button
                     android:layout_width="24dp"
@@ -112,7 +116,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:onClick="addThirtyForTeamA"
-                android:text="+30 points" />
+                android:text="+30 points"
+                android:textAppearance="@style/text_items" />
 
         </LinearLayout>
 
@@ -139,43 +144,42 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-medium"
                 android:gravity="center_horizontal"
-                android:text="Team B"
-                android:textColor="#616161"
-                android:textSize="20sp" />
+                android:text="Team Name"
+                android:textAppearance="@style/text_items" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <Button
                     android:layout_width="24dp"
                     android:layout_height="48dp"
                     android:layout_marginRight="8dp"
+                    android:background="@drawable/minus"
                     android:onClick="decrementB"
-                    android:textSize="20dp"
-                    android:background="@drawable/minus"/>
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/team_b_score"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="start"
                     android:layout_marginBottom="8dp"
-                    android:text="0"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="45sp" />
+                    android:text="0"
+                    android:textAppearance="@style/team_score" />
 
                 <Button
                     android:layout_width="24dp"
                     android:layout_height="48dp"
                     android:layout_marginLeft="8dp"
-                    android:onClick="incrementB"
                     android:background="@drawable/plus"
-                    android:textSize="20dp"/>
+                    android:onClick="incrementB"
+                    android:textSize="20dp" />
 
 
             </LinearLayout>
@@ -185,7 +189,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:onClick="addThirtyForTeamB"
-                android:text="+30 points" />
+                android:text="+30 points"
+                android:textAppearance="@style/text_items" />
 
         </LinearLayout>
 
@@ -194,15 +199,19 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#707070"
+        android:background="@color/darkGrey"
+        android:elevation="2dp"
         android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingEnd="24dp"
+        android:paddingStart="24dp"
+        android:paddingTop="8dp"
         tools:context="com.example.android.quidditchscore.MainActivity">
 
         <Button
             android:id="@+id/yellowCardBtn"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_height="56dp"
             android:layout_weight="1"
             android:text="yellow\ncard"
             android:textAlignment="center"
@@ -211,8 +220,9 @@
         <Button
             android:id="@+id/blueCardBtn"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:layout_weight="1"
             android:text="blue\ncard"
             android:textAlignment="center"
@@ -221,8 +231,7 @@
         <Button
             android:id="@+id/redCardBtn"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_height="56dp"
             android:layout_weight="1"
             android:text="red\ncard"
             android:textAlignment="center"
@@ -235,7 +244,7 @@
         android:layout_width="fill_parent"
         android:layout_height="150dp"
         android:layout_weight="1"
-        android:background="#fff"
+        android:background="@color/lightGrey"
         android:orientation="horizontal"
         tools:context="com.example.android.quidditchscore.MainActivity">
 
@@ -243,7 +252,8 @@
             android:id="@+id/simpleListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#acacac"/>
+            android:background="@color/lightGrey"
+            />
 
     </LinearLayout>
 
@@ -253,10 +263,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:onClick="resets"
+        android:background="@color/darkGrey"
+        android:elevation="2dp"
         android:text="resets game"
-        android:textSize="20sp"
-        android:background="#7d7d7d"
-        />
+        android:theme="@style/resets" />
 
 </LinearLayout>
